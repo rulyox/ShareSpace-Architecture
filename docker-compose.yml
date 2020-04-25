@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+
+  back:
+    image: share-space-back
+    container_name: share-space-back
+    build: ./back
+    volumes:
+      - ./back/app:/app
+      - /app/node_modules
+      - /app/build
+    networks:
+      - backend
+
+  front:
+    image: share-space-front
+    container_name: share-space-front
+    build: ./front
+    volumes:
+      - ./front/app:/app
+      - /app/node_modules
+
+  nginx:
+    image: nginx:stable
+    container_name: share-space-nginx
+    volumes:
+      - ./front/app:/web
+      - ./nginx/server.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - backend
+    ports:
+      - 80:80
+
+networks:
+
+  backend:
