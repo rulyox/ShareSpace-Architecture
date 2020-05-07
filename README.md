@@ -1,6 +1,6 @@
 # Share Space Architecture
 
-<div align="center"> <img src="./logo.png" width=600px height=200px> </div>
+![logo](./logo.png)
 
 Architecture for the Share Space project.
 
@@ -14,6 +14,8 @@ Architecture for the Share Space project.
 2. Clone [Front-end Server](https://github.com/rulyox/ShareSpace-Front) code to `./front/app`.
 3. Add configurations to each directory.
 4. Change `server_name` in `./nginx/server.conf`.
+5. Change `MYSQL_ROOT_PASSWORD` in `./docker-compose.yml`.
+6. Create database using `./mysql/schema.sql`.
 
 ## Usage
 
@@ -29,7 +31,7 @@ docker-compose build
 docker-compose up -d
 ```
 
-`share-space-back` and `share-space-nginx` container should be running.
+`share-space-back`, `share-space-nginx`, `share-space-mysql` container should be running.
 
 `share-space-front` container should be exited.
 

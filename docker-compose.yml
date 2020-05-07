@@ -6,6 +6,7 @@ services:
     image: share-space-back
     container_name: share-space-back
     build: ./back
+    restart: always
     volumes:
       - ./back/app:/app
       - /app/node_modules
@@ -31,6 +32,17 @@ services:
       - backend
     ports:
       - 80:80
+
+  mysql:
+    image: share-space-mysql
+    container_name: share-space-mysql
+    build: ./mysql
+    volumes:
+      - ./mysql/volume:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=[PASSWORD]
 
 networks:
 
