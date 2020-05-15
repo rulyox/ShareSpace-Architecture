@@ -3,6 +3,7 @@ CREATE TABLE `user` (
   `access` CHAR(21) UNIQUE NOT NULL,
   `email` TEXT NOT NULL,
   `pw` TEXT NOT NULL,
+  `salt` TEXT NOT NULL,
   `name` TEXT NOT NULL,
   `image` TEXT,
   CONSTRAINT `user_pk` PRIMARY KEY (`id`)
