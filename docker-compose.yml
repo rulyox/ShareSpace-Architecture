@@ -25,6 +25,7 @@ services:
   nginx:
     image: nginx:stable
     container_name: share-space-nginx
+    restart: always
     volumes:
       - ./front/app:/web
       - ./nginx/server.conf:/etc/nginx/conf.d/default.conf
@@ -37,6 +38,7 @@ services:
     image: share-space-mysql
     container_name: share-space-mysql
     build: ./mysql
+    restart: always
     volumes:
       - ./mysql/volume:/var/lib/mysql
     ports:
