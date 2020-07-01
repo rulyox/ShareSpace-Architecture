@@ -40,7 +40,7 @@ CREATE TABLE `post_comment` (
   `post` INT NOT NULL,
   `user` INT NOT NULL,
   `comment` TEXT NOT NULL,
-  `time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   CONSTRAINT `post_comment_pk` PRIMARY KEY (`id`),
   CONSTRAINT `post_comment_post_fk` FOREIGN KEY (`post`) REFERENCES post (`id`) ON DELETE CASCADE,
   CONSTRAINT `post_comment_user_fk` FOREIGN KEY (`user`) REFERENCES user (`id`) ON DELETE CASCADE
