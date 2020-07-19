@@ -35,9 +35,8 @@ services:
       - 80:80
 
   mysql:
-    image: share-space-mysql
+    image: mysql:5.7
     container_name: share-space-mysql
-    build: ./mysql
     restart: always
     volumes:
       - ./mysql/volume:/var/lib/mysql
