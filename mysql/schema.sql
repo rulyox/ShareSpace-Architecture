@@ -41,6 +41,7 @@ CREATE TABLE post_like (
 
 CREATE TABLE post_comment (
     id INT NOT NULL AUTO_INCREMENT,
+    access CHAR(21) UNIQUE NOT NULL,
     post_id INT NOT NULL,
     user_id INT NOT NULL,
     comment TEXT NOT NULL,
